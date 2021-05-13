@@ -24,5 +24,7 @@ public class Exercise2 {
 		default :
 			System.out.println("Invalid input");
 		}
+		
+		sc.close();
 	}
 }
