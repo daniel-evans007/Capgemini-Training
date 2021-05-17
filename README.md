@@ -1,2 +1,2 @@
 # Capgemini-Training
-Daily codes and Lab-Book exercises.
+Daily codes and Lab-Book Exercises.
