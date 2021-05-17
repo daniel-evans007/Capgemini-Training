@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Exercise2 {
 
 	static String getImage(String s) {
+		
 		StringBuffer sb = new StringBuffer(s);
 		String finalString = new String();
 		

@@ -12,7 +12,8 @@ public class Exercise5 {
 		int lineNumber = 0, wordNumber = 0, charNumber, i;
 		char ch;
 		
-		File file = new File("D:\\Capgemini Training\\Codes\\Anirban-LabBook\\src\\lab_three\\test.txt");
+		File file = new File("D:\\Capgemini Training\\Codes\\Anirban-LabBook"
+				+ "\\src\\lab_three\\test.txt");
 		
 		FileInputStream f = new FileInputStream(file);
 		
@@ -20,7 +21,7 @@ public class Exercise5 {
 		
 		for (i=0;i<charNumber;i++) {
 			ch = (char)f.read();
-			if (ch == '\n') {
+			if (ch == '.') {
 				lineNumber++;
 			}
 			else if (ch == ' ') {

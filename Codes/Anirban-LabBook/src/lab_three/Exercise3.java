@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Exercise3 {
 	
 	public static String alterString(String s) {
+		
 		char ch=' ';
 		String str="";
 		

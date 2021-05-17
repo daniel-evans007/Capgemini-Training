@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Exercise4 {
 
 	static int modifyNumber(int n) {
+		
 		String s = Integer.toString(n);
 		StringBuffer sb = new StringBuffer();
 		int i, diff;
