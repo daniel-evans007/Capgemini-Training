@@ -1,4 +1,4 @@
-package day5;
+package day5_person_inheritance;
 
 public class Person {
 

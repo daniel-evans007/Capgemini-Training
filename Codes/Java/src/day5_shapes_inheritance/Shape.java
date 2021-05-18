@@ -1,4 +1,4 @@
-package day5_shapes;
+package day5_shapes_inheritance;
 
 public class Shape {
 
