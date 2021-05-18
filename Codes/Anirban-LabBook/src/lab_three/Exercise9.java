@@ -25,9 +25,9 @@ public class Exercise9 {
 					+ "\nto go to reach the above date.");  
 		}
 		else {
-			System.out.println("Above date is " 	+ Math.abs(days)+ " days " 
-					+ Math.abs(months)+ " months and " 
-					+ Math.abs(years)+ " years "
+			System.out.println("Above date is " + Math.abs(days)+ " days " 
+					+ Math.abs(months) + " months and " 
+					+ Math.abs(years) + " years "
 					+ "\nbefore today."); 
 		}
 	}
