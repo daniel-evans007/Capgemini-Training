@@ -45,32 +45,32 @@ public class RegExPractice {
 	Pattern pat4 = Pattern.compile(phoneRegex);
 	Pattern pat5 = Pattern.compile(cityRegex);
 	
-	if(pat.matcher(username).matches())
+	if (pat.matcher(username).matches())
 		System.out.println("username Matched");
 	else
 		System.out.println("username does not match");
 	
-	if(pat1.matcher(mail).matches())
+	if (pat1.matcher(mail).matches())
 		System.out.println("email Matched");
 	else
 		System.out.println("email does not match");
 	
-	if(pat2.matcher(password).matches())
+	if (pat2.matcher(password).matches())
 		System.out.println("password Matched");
 	else
 		System.out.println("password does not match");
 	
-	if(pat3.matcher(pincode).matches())
+	if (pat3.matcher(pincode).matches())
 		System.out.println("pincode Matched");
 	else
 		System.out.println("pincode does not match");
 	
-	if(pat4.matcher(mobileNo).matches())
+	if (pat4.matcher(mobileNo).matches())
 		System.out.println("city Matched");
 	else
 		System.out.println("city does not match");
 	
-	if(pat5.matcher(city).matches())
+	if (pat5.matcher(city).matches())
 		System.out.println("no. Matched");
 	else
 		System.out.println("no. does not match");
