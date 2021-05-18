@@ -1,2 +1,4 @@
 # Capgemini-Training
-Daily codes and Lab-Book Exercises.
+Daily Codes and Lab-Book Exercises.
+LabBook Exercises are under Anirban-LabBook directory.
+Daily Java Codes are under Java directory.
