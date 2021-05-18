@@ -4,8 +4,10 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class RegExPractice {
+
 	public static void main(String[] args) {
-		
+	
+	//Partially working
 	Scanner sc=new Scanner(System.in);
 	
 	System.out.println("mail:");
@@ -46,32 +48,32 @@ public class RegExPractice {
 	if(pat.matcher(username).matches())
 		System.out.println("username Matched");
 	else
-		System.out.println("username does not matched");
+		System.out.println("username does not match");
 	
 	if(pat1.matcher(mail).matches())
 		System.out.println("email Matched");
 	else
-		System.out.println("email does not matched");
+		System.out.println("email does not match");
 	
 	if(pat2.matcher(password).matches())
 		System.out.println("password Matched");
 	else
-		System.out.println("password does not matched");
+		System.out.println("password does not match");
 	
 	if(pat3.matcher(pincode).matches())
 		System.out.println("pincode Matched");
 	else
-		System.out.println("pincode does not matched");
+		System.out.println("pincode does not match");
 	
 	if(pat4.matcher(mobileNo).matches())
 		System.out.println("city Matched");
 	else
-		System.out.println("city does not matched");
+		System.out.println("city does not match");
 	
 	if(pat5.matcher(city).matches())
 		System.out.println("no. Matched");
 	else
-		System.out.println("no. does not matched");
+		System.out.println("no. does not match");
 	
 	sc.close();
 	}
