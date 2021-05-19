@@ -4,6 +4,10 @@ public class Transaction {
 
 	private int accountNumber;
 	
+	public Transaction() {
+		
+	}
+	
 	public int getAccountNumber() {
 		return accountNumber;
 	}

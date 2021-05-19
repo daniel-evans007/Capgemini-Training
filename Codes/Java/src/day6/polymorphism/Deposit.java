@@ -1,11 +1,16 @@
 package day6.polymorphism;
 
-public class Deposit extends Transaction{
+public class Deposit extends Transaction {
 
 	private double amount;
 	
+	public Deposit(double amount) {
+		this.amount = amount;
+	}
+	
 	@Override
 	public void execute() {
-		System.out.print("Amount Deposited is: "+amount);
+		System.out.print("\nAmount Deposited is: "+amount);
+		BalanceInquiry.balance += amount;
 	}
 }

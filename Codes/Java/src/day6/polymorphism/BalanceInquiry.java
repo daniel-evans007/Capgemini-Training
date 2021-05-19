@@ -1,10 +1,16 @@
 package day6.polymorphism;
 
 public class BalanceInquiry extends Transaction {
-
-	private int balance;
+	
+	public static double balance;
+	
+	public BalanceInquiry() {
+		
+	}
+	
+	
 	@Override
 	public void execute() {
-		System.out.print("Balance is: "+balance);
+		System.out.print("\nBalance is: "+balance);
 	}
 }
