@@ -2,8 +2,11 @@ package day6.payroll;
 
 public class Payroll {
 
-	private int salary;
-	public int adjustSalary(int amount) {
-		return salary + amount;
+	public Payroll() {
+		
+	}
+	
+	public int adjustSalary(int salary) {
+		return salary;
 	}
 }
