@@ -8,7 +8,6 @@ public class BalanceInquiry extends Transaction {
 		
 	}
 	
-	
 	@Override
 	public void execute() {
 		System.out.print("\nBalance is: "+balance);
