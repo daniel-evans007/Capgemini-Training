@@ -40,7 +40,7 @@ public class EmployeeInsuranceSystem implements EmployeeService{
 		else if (emp.getSalary() >= 40000 && emp.getSalary() < 40000 && emp.getDesignation().equalsIgnoreCase("Analyst")) {
 			emp.setInsuranceScheme("Scheme #2");
 		}
-		else if (emp.getSalary() >= 70000 && emp.getSalary() < 20000 && emp.getDesignation().equalsIgnoreCase("Manager")) {
+		else if (emp.getSalary() >= 40000 && emp.getSalary() < 70000 && emp.getDesignation().equalsIgnoreCase("Manager")) {
 			emp.setInsuranceScheme("Scheme #3");
 		}
 	}
