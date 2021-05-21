@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 
 public class MathematicsTest {
 
-	Mathematics a = new Mathematics();
+	Mathematics math = new Mathematics();
 	
 	@Test
 	public void addTest() {
 		
 		int expectedResult = 11;
-		int actualResult = a.add(6, 5);
+		int actualResult = math.add(6, 5);
 		
 		assertEquals(expectedResult, actualResult);
 	}
@@ -21,7 +21,7 @@ public class MathematicsTest {
 	public void diffTest() {
 		
 		int expectedResult = 1;
-		int actualResult = a.diff(6, 5);
+		int actualResult = math.diff(6, 5);
 		
 		assertEquals(expectedResult, actualResult);
 	}
@@ -30,7 +30,7 @@ public class MathematicsTest {
 	public void mulTest() {
 		
 		int expectedResult = 30;
-		int actualResult = a.mul(6, 5);
+		int actualResult = math.mul(6, 5);
 		
 		assertEquals(expectedResult, actualResult);
 	}
@@ -39,7 +39,7 @@ public class MathematicsTest {
 	public void divTest() {
 		
 		int expectedResult = 1;
-		int actualResult = a.div(6, 5);
+		int actualResult = math.div(6, 5);
 		
 		assertEquals(expectedResult, actualResult);
 	}
