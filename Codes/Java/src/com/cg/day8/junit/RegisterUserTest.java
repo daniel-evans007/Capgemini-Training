@@ -5,53 +5,64 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class RegisterUserTest {
-
-	public static RegisterUser user;
 	
+	public static RegisterUser ru;
 	@BeforeAll
 	public static void setUp() {
 		System.out.println("This method is annoted with @BeforeAll to execute as "
-				+"first method in the test class RegisterUserTest");
+							+"first method in the test class RegisterUserTest");
+		ru=new RegisterUser();
+		ru.registerUser();
 	}
 	
+	@BeforeEach
+	public void setUpForTest() {
+		System.out.println("This method is annoted with @BeforeEach to execute "
+							+"before each test case");
+		
+	}
+
 	@Test
 	void testValidateFirstName() {
-		assertSame("First Name is valid", user.validateFirstName(user.getFirstName()));
+		
+		assertSame("First Name is valid",ru.validateFirstName(ru.getFirstName()));
 	}
 
 	@Test
 	void testValidateLastName() {
-		assertSame("Last Name is valid", user.validateLastName(user.getLastName()));
+		assertSame("Last Name is valid",ru.validateLastName(ru.getLastName()));
 	}
 
 	@Test
 	void testValidateMobileNo() {
-		assertSame("Mobile number is valid", user.validateMobileNo(user.getMobileNo()));
+		assertSame("Mobile number is valid",  ru.validateMobileNo(ru.getMobileNo()));
 	}
 
 	@Test
-	void testValidateUserName() {
-		assertSame("Username is valid", user.validateUserName(user.getUserName()));
+	void testValidateUserame() {
+		assertSame("User Name is valid",ru.validateUsername(ru.getUserName()));
 	}
 
 	@Test
 	void testValidatePassword() {
-		assertSame("Password is valid", user.validatePassword(user.getPassword()));
+		assertSame("Password is valid",ru.validatePassword(ru.getPassword()));
 	}
+
 
 	@AfterEach
-	void stopEach() {
+	public void stopEach(){
 		System.out.println("This method is annoted with @BeforeEach to execute "
-				+"before each test case");
+							+"before each test case");
 	}
-
+	
 	@AfterAll
 	public static void stopAll(){
 		System.out.println("This method is annoted with @BeforeAll to execute as "
 							+"last method in the test class RegisterUserTest");
-		user = null;
+		ru=null;
 	}
 }
