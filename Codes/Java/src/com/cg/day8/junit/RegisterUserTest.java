@@ -23,7 +23,6 @@ class RegisterUserTest {
 	public void setUpForTest() {
 		System.out.println("This method is annoted with @BeforeEach to execute "
 							+"before each test case");
-		
 	}
 
 	@Test
