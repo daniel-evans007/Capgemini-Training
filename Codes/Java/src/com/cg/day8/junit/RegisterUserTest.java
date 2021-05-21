@@ -27,12 +27,12 @@ class RegisterUserTest {
 
 	@Test
 	void testValidateFirstName() {
-		assertSame("First Name is valid",ru.validateFirstName(ru.getFirstName()));
+		assertSame("First Name is valid", ru.validateFirstName(ru.getFirstName()));
 	}
 
 	@Test
 	void testValidateLastName() {
-		assertSame("Last Name is valid",ru.validateLastName(ru.getLastName()));
+		assertSame("Last Name is valid", ru.validateLastName(ru.getLastName()));
 	}
 
 	@Test
@@ -42,12 +42,12 @@ class RegisterUserTest {
 
 	@Test
 	void testValidateUserame() {
-		assertSame("User Name is valid",ru.validateUserName(ru.getUserName()));
+		assertSame("User Name is valid", ru.validateUserName(ru.getUserName()));
 	}
 
 	@Test
 	void testValidatePassword() {
-		assertSame("Password is valid",ru.validatePassword(ru.getPassword()));
+		assertSame("Password is valid", ru.validatePassword(ru.getPassword()));
 	}
 
 
@@ -61,6 +61,6 @@ class RegisterUserTest {
 	public static void stopAll(){
 		System.out.println("This method is annoted with @BeforeAll to execute as "
 							+"last method in the test class RegisterUserTest");
-		ru=null;
+		ru = null;
 	}
 }
