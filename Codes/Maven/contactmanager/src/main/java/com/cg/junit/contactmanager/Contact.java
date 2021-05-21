@@ -39,7 +39,7 @@ public class Contact {
 	}
 
 	public String validateFirstName(String fName) {
-		if(fName == null || fName.equals("")) {
+		if (fName == null || fName.equals("")) {
 			return "First Name cannot be null";
 		}
 		else {
@@ -48,7 +48,7 @@ public class Contact {
 	}
 
 	public String validateLastName(String lName) {
-		if(lName == null || lName.equals("")) {
+		if (lName == null || lName.equals("")) {
 			return "Last Name cannot be null";
 		}
 		else {
@@ -57,13 +57,13 @@ public class Contact {
 	}
 	
 	public String validateMobileNo(String mobNo) {
-		if(mobNo.length() != 10) {
+		if (mobNo.length() != 10) {
 			return "mobileNo cannot be less than 10 digits" ;
 		}
-		else if(!mobNo.matches("\\d+")) {
+		else if (!mobNo.matches("\\d+")) {
 			return "mobileNo can contain only digits" ;
 		}
-		else if(!mobNo.startsWith("0")) {
+		else if (!mobNo.startsWith("0")) {
 			return "mobileNo should start with 0";
 		}
 		else {

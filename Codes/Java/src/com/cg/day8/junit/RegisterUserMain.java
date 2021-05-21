@@ -6,7 +6,7 @@ public class RegisterUserMain {
 		
 		RegisterUser user = new RegisterUser();
 		
-		user.readDetails();
+		user.registerUser();
 		
 		System.out.println(user.displayDetails());
 	}

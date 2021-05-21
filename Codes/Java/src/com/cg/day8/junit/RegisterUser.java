@@ -98,17 +98,50 @@ public class RegisterUser {
 		}
 	}
 	
-	public void readDetails() {
+	public String validateUserName(String userName) {
+		if (userName == null || userName.equals(" ")) {
+			return "Username cannot be null.";
+		}
+		else if (!(userName.contains("-") || userName.contains("_"))) {
+			return "Username must contain '-' or '_'";
+		}
+		else {
+			return "Username is valid";
+		}
+	}
+	
+	public String validatePassword(String password) {
+		if(password == null || password.equals("")) {
+			return "Password cannot be null";
+		}
+		else if(password.length()<=8 && password.length()>=16) {
+			return "Password must have minimum of 8 characters and maximum 16 characters";
+		}
+		else {
+			return "Password is valid";
+		}
+	}
+	
+	public void registerUser() {
 		System.out.println("Enter the details of Contact");
 		System.out.println("Enter the firstName ");
 		System.out.println(validateFirstName(firstName = sc.nextLine()));
+		
 		System.out.println("Enter the lastName ");
 		System.out.println(validateLastName(lastName = sc.nextLine()));
+		
 		System.out.println("Enter the mobileNo ");
 		System.out.println(validateMobileNo(mobileNo = sc.nextLine()));
+		
+		System.out.println("Enter Username ");
+		System.out.println(validateFirstName(userName = sc.nextLine()));
+		
+		System.out.println("Enter password ");
+		System.out.println(validateLastName(password = sc.nextLine()));
 	}
 	
 	public String displayDetails() {
-		return "The details of the contact is = " + firstName + " " + lastName +" " +mobileNo;
+		return "The details of the contact is = " + firstName + " " + lastName +" " +mobileNo
+				+" "+userName+" "+password;
 	}
 }
