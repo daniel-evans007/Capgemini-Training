@@ -7,7 +7,6 @@ public class Contact {
 	private String firstName;
 	private String lastName;
 	private String mobileNo;
-	
 	Scanner sc = new Scanner(System.in);
 
 	public Contact() {
@@ -39,44 +38,47 @@ public class Contact {
 		this.mobileNo = mobileNo;
 	}
 
-	public void validateFirstName() {
-		if(this.firstName == null) {
-			throw new RuntimeException("First Name cannot be null");
+	public String validateFirstName(String fName) {
+		if(fName == null || fName.equals("")) {
+			return "First Name cannot be null";
+		}else {
+			return "First Name is valid";
 		}
 	}
 
-		public void validateLastName() {
-			if(this.lastName == null) {
-				throw new RuntimeException("Last Name cannot be null");
+		public String validateLastName(String lName) {
+			if(lName == null || lName.equals("")) {
+				return "Last Name cannot be null";
+			}else {
+				return "Last Name is valid";
 			}
 	}
 	
-	public void validateMobileNo() {
-		if(this.mobileNo.length() != 10) {
-			throw new RuntimeException("mobileNo cannot be less than 10 digits");
+	public String validateMobileNo(String mobNo) {
+		if(mobNo.length() != 10) {
+			return "mobileNo cannot be less than 10 digits" ;
 		}
-		if(! this.mobileNo.matches("\\d+")) {
-			throw new RuntimeException("mobileNo can contain only digits");
+		else if(!mobNo.matches("\\d+")) {
+			return "mobileNo can contain only digits" ;
 		}
-		if(!this.mobileNo.startsWith("0")) {
-			throw new RuntimeException("mobileNo should start with 0");
+		else if(!mobNo.startsWith("0")) {
+			return "mobileNo should start with 0";
+		}else {
+			return "Mobile number is valid";
 		}
 	}
 	
 	public void readDetails() {
 		System.out.println("Enter the details of Contact");
-		
-		System.out.print("Enter the firstName ");
-		firstName = sc.nextLine();
-		
-		System.out.print("Enter the lastName: ");
-		lastName = sc.nextLine();
-		
-		System.out.print("Enter the mobileNo: ");
-		mobileNo = sc.nextLine();
+		System.out.println("Enter the firstName ");
+		System.out.println(validateFirstName(firstName = sc.nextLine()));
+		System.out.println("Enter the lastName ");
+		System.out.println(validateLastName(lastName = sc.nextLine()));
+		System.out.println("Enter the mobileNo ");
+		System.out.println(validateMobileNo(mobileNo = sc.nextLine()));
 	}
-	
+		
 	public String displayDetails() {
-		return "\nThe Contact Details are = " + firstName + "\t" + lastName +"\t" +mobileNo;
-	}	
+		return "The details of the contact is = " + firstName + "\t" + lastName +"\t" +mobileNo;
+	}
 }
