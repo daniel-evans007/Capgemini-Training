@@ -27,7 +27,6 @@ class RegisterUserTest {
 
 	@Test
 	void testValidateFirstName() {
-		
 		assertSame("First Name is valid",ru.validateFirstName(ru.getFirstName()));
 	}
 
