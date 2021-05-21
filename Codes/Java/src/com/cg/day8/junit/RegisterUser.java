@@ -79,15 +79,17 @@ public class RegisterUser {
 		public String validateFirstName(String fName) {
 		if(fName == null || fName.equals("")) {
 			return "First Name cannot be null";
-		}else {
+		}
+		else {
 			return "First Name is valid";
 		}
 	}
 
-		public String validateLastName(String lName) {
+	public String validateLastName(String lName) {
 			if(lName == null || lName.equals("")) {
 				return "Last Name cannot be null";
-			}else {
+			}
+			else {
 				return "Last Name is valid";
 			}
 	}
@@ -107,18 +109,18 @@ public class RegisterUser {
 		}
 	}
 	
-	public String validateUsername(String uName) {
-			if(uName == null || uName.equals("")) {
-				return "User Name cannot be null";
-			}
-			else if(!(uName.contains("-")||uName.contains("_")))
-			{
-				return "User Name must contain '-'or '_' ";
-			}
-			else {
-				return "User Name is valid";
-			}
+	public String validateUserName(String uName) {
+		if(uName == null || uName.equals("")) {
+			return "User Name cannot be null";
 		}
+		else if(!(uName.contains("-")||uName.contains("_")))
+		{
+			return "User Name must contain '-'or '_' ";
+		}
+		else {
+			return "User Name is valid";
+		}
+	}
 	
 	public String validatePassword(String pwd) {
 		if(pwd == null || pwd.equals("")) {
@@ -140,9 +142,9 @@ public class RegisterUser {
 		System.out.println("Enter mobileNo ");
 		System.out.println(validateMobileNo(mobileNo = sc.nextLine()));
 		System.out.println("Enter Username ");
-		System.out.println(validateFirstName(userName = sc.nextLine()));
+		System.out.println(validateUserName(userName = sc.nextLine()));
 		System.out.println("Enter password ");
-		System.out.println(validateLastName(password = sc.nextLine()));
+		System.out.println(validatePassword(password = sc.nextLine()));
 	}
 	
 	public String displayDetails() {

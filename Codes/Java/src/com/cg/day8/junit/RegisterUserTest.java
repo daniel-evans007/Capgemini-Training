@@ -44,7 +44,7 @@ class RegisterUserTest {
 
 	@Test
 	void testValidateUserame() {
-		assertSame("User Name is valid",ru.validateUsername(ru.getUserName()));
+		assertSame("User Name is valid",ru.validateUserName(ru.getUserName()));
 	}
 
 	@Test
