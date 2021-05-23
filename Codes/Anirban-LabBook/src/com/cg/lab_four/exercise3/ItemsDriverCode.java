@@ -133,7 +133,7 @@ class ItemsDriverCode {
 		System.out.println("1. Book");
 		System.out.println("2. Journal Paper");
 		System.out.print("Enter your choice : ");
-		choice=sc.nextInt();
+		choice = sc.nextInt();
 		
 		switch(choice) {
 			case 1:
@@ -142,7 +142,8 @@ class ItemsDriverCode {
 			case 2:
 				chooseJournalPaper();
 				break;
-			default:System.out.println("Enter correct choice (1-2)...");
+			default:
+				System.out.println("Enter correct choice (1-2)...");
 		}
 			
 		sc.close();
@@ -203,8 +204,10 @@ class ItemsDriverCode {
 				case 3: video.addItem();
 						video.print();
 						break;
-				default: System.out.println("Enter correct choice (1-3)...");
+				default:
+					System.out.println("Enter correct choice (1-3)...");
 			}
+			
 			System.out.print("Do you want to continue?(y/n) ");
 			sc.nextLine();
 			
@@ -269,7 +272,8 @@ class ItemsDriverCode {
 				case 3: video.addItem();
 						video.print();
 						break;
-				default: System.out.println("Enter correct choice (1-3)...");
+				default:
+					System.out.println("Enter correct choice (1-3)...");
 			}
 			
 			System.out.print("Do you want to continue?(y/n) ");
@@ -302,7 +306,8 @@ class ItemsDriverCode {
 			case 2:
 				chooseCD();
 				break;
-			default:System.out.println("Enter correct choice (1-2)...");
+			default:
+				System.out.println("Enter correct choice (1-2)...");
 		}
 			
 		sc.close();
@@ -329,7 +334,8 @@ class ItemsDriverCode {
 			case 2:
 				chooseMediaItem();
 				break;
-			default: System.out.println("Enter correct choice (1-2)....");
+			default:
+				System.out.println("Enter correct choice (1-2)....");
 		}
 		
 		sc.close();	
