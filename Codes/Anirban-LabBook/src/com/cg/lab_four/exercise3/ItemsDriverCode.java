@@ -68,22 +68,23 @@ class ItemsDriverCode {
 	public static void chooseJournalPaper() {
 		
 		Scanner sc=new Scanner(System.in);
+		
 		String uid;
 		String title;
 		int noOfCopies;
 		String author;
 		int year;
 		int choice;
-		char c=' ';
+		char c = ' ';
 		
 		System.out.print("Enter the identification number of the Journal Paper: ");
 		uid = sc.nextLine();
 		
 		System.out.print("Enter the title of the Journal Paper: ");
-		title=sc.nextLine();
+		title = sc.nextLine();
 		
 		System.out.print("Enter the number of copies of the Journal Paper: ");
-		noOfCopies=sc.nextInt();
+		noOfCopies = sc.nextInt();
 		
 		System.out.print("Enter the author of the Journal Paper: ");
 		sc.nextLine();
@@ -114,9 +115,12 @@ class ItemsDriverCode {
 						break;
 				default: System.out.println("Enter correct choice (1-3)...");
 			}
+			
 			System.out.print("Do you want to continue?(y/n) ");
 			sc.nextLine();
-			c=sc.next().charAt(0);
+			
+			c = sc.next().charAt(0);
+			
 			if(c=='n' || c=='N') {
 				break;
 			}
@@ -213,7 +217,7 @@ class ItemsDriverCode {
 			
 			c = sc.next().charAt(0);
 			
-			if(c=='n' || c=='N') {
+			if(c == 'n' || c == 'N') {
 				break;
 			}
 		}
@@ -231,7 +235,7 @@ class ItemsDriverCode {
 		String artist;
 		String genre;
 		int choice;
-		char c=' ';
+		char c = ' ';
 		
 		System.out.print("Enter the identification number of the CD: ");
 		uid = sc.nextLine();
@@ -281,7 +285,7 @@ class ItemsDriverCode {
 			
 			c = sc.next().charAt(0);
 			
-			if(c=='n' || c=='N') {
+			if(c == 'n' || c == 'N') {
 				break;
 			}
 		}
