@@ -31,7 +31,7 @@ public class Exercise1 {
 			validateAge(age);
 		}
 		catch (AgeException e) {
-			System.out.print("Error message: "+e.getMessage());
+			System.out.println(e.getMessage());
 		}
 		
 		sc.close();
