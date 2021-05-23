@@ -2,7 +2,7 @@ package com.cg.lab_four.exercise3;
 
 import java.util.Scanner;
 
-class Library {
+class ItemsDriverCode {
 	
 	public static void chooseBook() {
 		
