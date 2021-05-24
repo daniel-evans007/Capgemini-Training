@@ -59,7 +59,7 @@ public class FlowerMain {
 			System.out.println("\nDo you want to continue, yes or no?");
 			wish = sc.nextLine();
 			
-			if (!wish.equalsIgnoreCase("yes")) {
+			if (!wish.equalsIgnoreCase("yes") == true) {
 				System.exit(0);
 			}
 			
