@@ -60,6 +60,7 @@ public class FlowerMain {
 			wish = sc.nextLine();
 			
 			if (!wish.equalsIgnoreCase("yes") == true) {
+				System.out.println("Exiting after successful completion...");
 				System.exit(0);
 			}
 			
