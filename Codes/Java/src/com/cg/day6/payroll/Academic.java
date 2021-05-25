@@ -2,7 +2,6 @@ package com.cg.day6.payroll;
 
 public class Academic extends Payroll {
 
-	private String name;
 	private int salary;
 	
 	public Academic() {
@@ -10,7 +9,6 @@ public class Academic extends Payroll {
 	}
 	
 	public Academic (String name, int salary) {
-		this.name = name;
 		this.salary = salary;
 	}
 	
