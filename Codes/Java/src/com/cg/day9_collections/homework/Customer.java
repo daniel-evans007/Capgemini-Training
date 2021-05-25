@@ -88,7 +88,7 @@ public class Customer {
 	}
 	
 	public static String validateName(String name) throws CustNameException {
-		String regex = "^[a-zA-Z].{2,}$";
+		String regex = "[A-Z]\\w+.[A-Z]\\w+";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(String.valueOf(name));
 		

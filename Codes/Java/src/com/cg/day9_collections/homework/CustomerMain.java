@@ -33,7 +33,7 @@ public class CustomerMain {
 						int temp = (int)(Math.random()*1000);
 						id = Customer.validateId(Integer.toString(temp));
 						
-						System.out.print("\nEnter Customer Name: ");
+						System.out.print("\nEnter Customer First Name and Last Name: ");
 						name = Customer.validateName(sc.nextLine());
 						
 						System.out.print("\nEnter Customer Age: ");
