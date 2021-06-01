@@ -57,17 +57,18 @@ public class BookManager {
 			if (bookList.get(i).getbId() == bId) {
 				System.out.println("Enter 1 to update Book Name");
 				System.out.println("Enter 2 to update Book Price");
+				
 				System.out.print("\nEnter choice: ");
 				int choice = Integer.parseInt(sc.nextLine());
 				
 				switch (choice) {
 				case 1:
-					System.out.print("Enter the new Book Name: ");
+					System.out.print("\nEnter the new Book Name: ");
 					String bName = sc.nextLine();
 					bookList.get(i).setbName(bName);
 					break;
 				case 2:
-					System.out.print("Enter the new Book Price: ");
+					System.out.print("\nEnter the new Book Price: ");
 					double price = Double.parseDouble(sc.nextLine());
 					bookList.get(i).setPrice(price);
 					break;
@@ -75,7 +76,6 @@ public class BookManager {
 				return bookList;
 			}
 		}		
-		
 		throw new BookNotFoundException("Book doesn't exist");
 	}
 	
@@ -89,7 +89,6 @@ public class BookManager {
 				return bookList;
 			}
 		}
-		
 		throw new BookNotFoundException("Book doesn't exist");
 	}
 }
