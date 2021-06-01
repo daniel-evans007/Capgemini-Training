@@ -55,7 +55,7 @@ class BookManagerTest {
 	@DisplayName("Should not create book when Book Name is null")
 	public void shouldThrowRunTimeExceptionWhenBookNameIsNull() {
 		Assertions.assertThrows(BookNameException.class, () -> {
-			bookManager.addBook(102, null, 200.0);
+			bookManager.addBook(100, null, 200.0);
 		});
 	}
 
@@ -63,7 +63,7 @@ class BookManagerTest {
 	@DisplayName("Should not create book when Book Price is zero or negative")
 	public void shouldThrowRunTimeExceptionWhenBookPriceIsInvalid() {
 		Assertions.assertThrows(BookPriceException.class, () -> {
-			bookManager.addBook(102, "DaVince Code", -1);
+			bookManager.addBook(10, "DaVince Code", -1);
 		});
 	}
 }
