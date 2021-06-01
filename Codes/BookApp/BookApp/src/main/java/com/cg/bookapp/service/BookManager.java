@@ -44,6 +44,7 @@ public class BookManager {
 	public ArrayList<Book> updateBookDetails() throws BookNotFoundException {
 		System.out.println("Enter Book ID: ");
 		int bId = Integer.parseInt(sc.nextLine());
+		
 		for (int i=0;i<bookList.size();i++) {
 			if (bookList.get(i).getbId() == bId) {
 				System.out.println("Enter 1 to update Book Name");

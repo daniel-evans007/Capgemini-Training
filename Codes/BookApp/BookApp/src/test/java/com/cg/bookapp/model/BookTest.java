@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 
 class BookTest {
 
+	static Book book;
+	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
