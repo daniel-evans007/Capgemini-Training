@@ -1,10 +1,14 @@
 package com.cg.bookapp;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import com.cg.bookapp.exception.ArrayListIsNull;
 import com.cg.bookapp.exception.BookAlreadyFoundException;
+import com.cg.bookapp.exception.BookIdException;
+import com.cg.bookapp.exception.BookNameException;
 import com.cg.bookapp.exception.BookNotFoundException;
+import com.cg.bookapp.exception.BookPriceException;
 import com.cg.bookapp.service.BookManager;
 
 public class BookMain {
@@ -14,7 +18,7 @@ public class BookMain {
 	private static String bName;
 	private static double price;
 	
-	public static void main(String[] args) throws BookAlreadyFoundException, ArrayListIsNull, BookNotFoundException {
+	public static void main(String[] args) throws BookAlreadyFoundException, ArrayListIsNull, BookNotFoundException, BookIdException, BookNameException, BookPriceException {
 		
 		BookManager bm = new BookManager();
 		
@@ -36,19 +40,21 @@ public class BookMain {
 				bm.addBook(bId, bName, price);
 				break;
 			case 2:
-				bm.getAllBooks();
+				System.out.println(Arrays.toString(bm.getAllBooks().toArray()));
 				break;
 			case 3:
-				bm.updateBookDetails();
+				System.out.println("Modified Book List:");
+				System.out.println(Arrays.toString(bm.updateBookDetails().toArray()));
 				break;
 			case 4:
-				bm.deleteBook();
+				System.out.println("Modified Book List:");
+				System.out.println(Arrays.toString(bm.deleteBook().toArray()));
 				break;
 			default:
 				System.out.println("Invalid choice...");
 			}
 			
-			System.out.println("Do you want to continue, yes or no");
+			System.out.print("\nDo you want to continue, yes or no: ");
 			choice = sc.nextLine();
 			if (!choice.equalsIgnoreCase("yes")) {
 				System.out.println("Exiting Program successfully...");
