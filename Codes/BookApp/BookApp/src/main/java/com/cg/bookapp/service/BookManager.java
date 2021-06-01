@@ -50,7 +50,7 @@ public class BookManager {
 	}
 	
 	public ArrayList<Book> updateBookDetails() throws BookNotFoundException {
-		System.out.println("Enter Book ID: ");
+		System.out.print("Enter Book ID: ");
 		int bId = Integer.parseInt(sc.nextLine());
 		
 		for (int i=0;i<bookList.size();i++) {
@@ -72,29 +72,24 @@ public class BookManager {
 					bookList.get(i).setPrice(price);
 					break;
 				}
+				return bookList;
 			}
-			else {
-				throw new BookNotFoundException("Book doesn't exist");
-			}
-		}
+		}		
 		
-		return bookList;
+		throw new BookNotFoundException("Book doesn't exist");
 	}
 	
 	public ArrayList<Book> deleteBook() throws BookNotFoundException {
-		System.out.print("Enter Book ID of the book to be deleted: ");
+		System.out.print("\nEnter the ID of the book to be deleted: ");
 		int bId = Integer.parseInt(sc.nextLine());
 		
 		for (int i=0;i<bookList.size();i++) {
 			if (bookList.get(i).getbId() == bId) {
-				System.out.println("Removing "+bookList.get(i).getbName());
 				bookList.remove(i);
-			}
-			else {
-				throw new BookNotFoundException("Book doesn't exist");
+				return bookList;
 			}
 		}
 		
-		return bookList;
+		throw new BookNotFoundException("Book doesn't exist");
 	}
 }

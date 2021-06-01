@@ -14,6 +14,7 @@ import com.cg.bookapp.service.BookManager;
 public class BookMain {
 
 	static Scanner sc = new Scanner(System.in);
+	
 	private static int bId;
 	private static String bName;
 	private static double price;
@@ -31,7 +32,7 @@ public class BookMain {
 			System.out.println("Enter 3 to Update different parameters of a particular book");
 			System.out.println("Enter 4 to Delete an existing book");
 			
-			System.out.print("Enter your choice: ");
+			System.out.print("\nEnter your choice: ");
 			option = Integer.parseInt(sc.nextLine());
 			
 			switch (option) {
@@ -43,12 +44,10 @@ public class BookMain {
 				System.out.println(Arrays.toString(bm.getAllBooks().toArray()));
 				break;
 			case 3:
-				System.out.println("Modified Book List:");
-				System.out.println(Arrays.toString(bm.updateBookDetails().toArray()));
+				bm.updateBookDetails();
 				break;
 			case 4:
-				System.out.println("Modified Book List:");
-				System.out.println(Arrays.toString(bm.deleteBook().toArray()));
+				bm.deleteBook();
 				break;
 			default:
 				System.out.println("Invalid choice...");
@@ -57,14 +56,15 @@ public class BookMain {
 			System.out.print("\nDo you want to continue, yes or no: ");
 			choice = sc.nextLine();
 			if (!choice.equalsIgnoreCase("yes")) {
-				System.out.println("Exiting Program successfully...");
+				System.out.println("\nExiting Program successfully...");
 				System.exit(0);
 			}
+			System.out.println();
 		}	
 	}
 
 	private static void readBookDetails() {
-		System.out.println("Enter the details of the book");
+		System.out.println("\nEnter the details of the book");
 		System.out.print("\nEnter Book ID: ");
 		bId = Integer.parseInt(sc.nextLine());
 		System.out.print("\nEnter Book Name: ");
