@@ -4,3 +4,4 @@
 - Daily Java Codes are under Java directory.
 - Junit testing files are under Maven directory.
 - Case Study is under Case Study directory.
+- Other dedicated projects can be found under directories with self-explanatory names.
