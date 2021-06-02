@@ -82,6 +82,7 @@ public class Vegetable implements Comparable<Vegetable> {
 
 	@Override
 	public int compareTo(Vegetable veg) {
-		return vegName.compareTo(veg.vegName);
+		System.out.println("vegList sorted using ID");
+		return vegId.compareTo(veg.vegId);
 	}	
 }

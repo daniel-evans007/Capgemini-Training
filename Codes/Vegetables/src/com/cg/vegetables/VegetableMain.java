@@ -3,7 +3,6 @@ package com.cg.vegetables;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import com.cg.vegetable.model.Vegetable;
 import com.cg.vegetable.service.VegetableManager;
 
 public class VegetableMain {
@@ -33,6 +32,7 @@ public class VegetableMain {
 			
 			switch (option) {
 			case 1:
+				readVegDetails();
 				vm.addVeg(vegId, vegName, vegPrice);
 				break;
 			case 2:
@@ -45,7 +45,27 @@ public class VegetableMain {
 				vm.deleteVegetable();
 				break;
 			case 5:
-				vm.sortVegetableList();
+				System.out.println("Do you want to sort using ID, Name or Price");
+				System.out.println("Enter 1 for ID");
+				System.out.println("Enter 2 for Name");
+				System.out.println("Enter 3 for Price");
+				System.out.print("\nEnter choice: ");
+				int ch = Integer.parseInt(sc.nextLine());
+				
+				switch (ch) {
+				case 1:
+					vm.sortVegetableList();
+					break;
+				case 2:
+					vm.sortVegUsingVegName();
+					break;
+				case 3:
+					vm.sortVegUsingVegPrice();
+					break;
+				default:
+					System.out.println("Invalid input");
+				}
+				
 			default:
 				System.out.println("Invalid choice...");
 			}

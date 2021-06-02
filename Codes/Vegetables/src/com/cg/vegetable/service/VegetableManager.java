@@ -90,4 +90,24 @@ public class VegetableManager {
 		}
 		return vegList;
 	}
+	
+	public void sortVegUsingVegName() {
+		Collections.sort(vegList, new VegetableNameComparator());
+		
+		System.out.println("vegList Sorted Using Name");
+		
+		for (Vegetable veggies: vegList) {
+			System.out.println(veggies);
+		}
+	}
+	
+	public void sortVegUsingVegPrice() {
+		Collections.sort(vegList, new VegetablePriceComparator());
+		
+		System.out.println("vegList Sorted Using Price");
+		
+		for (Vegetable veggies: vegList) {
+			System.out.println(veggies);
+		}
+	}
 }
