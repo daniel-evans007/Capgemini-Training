@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 public class Exercise1 {
 
+	@SuppressWarnings("rawtypes")
 	public static List getValues(HashMap<String, Integer> hashmap) {
 		
 		List<Map.Entry<String, Integer>> list = new ArrayList<>(hashmap.entrySet());
