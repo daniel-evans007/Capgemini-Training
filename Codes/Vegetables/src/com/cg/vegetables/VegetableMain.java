@@ -82,10 +82,10 @@ public class VegetableMain {
 	}
 	
 	public static void readVegDetails() {
-		System.out.println("Enter details of the vegetable");
-		System.out.println("Enter Veg ID: ");
+		System.out.println("\nEnter details of the vegetable");
+		System.out.print("\nEnter Veg ID: ");
 		vegId = sc.nextLine();
-		System.out.println("Enter Veg Name: ");
+		System.out.print("Enter Veg Name: ");
 		vegName = sc.nextLine();
 		System.out.println("Enter Veg Price: ");
 		vegPrice = Integer.parseInt(sc.nextLine());
