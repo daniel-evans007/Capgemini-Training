@@ -16,7 +16,6 @@ class BookTest {
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		book = new Book(101, "Angels and Demons", 245.0);
-		//book1 = new Book();
 	}
 
 	@AfterAll
