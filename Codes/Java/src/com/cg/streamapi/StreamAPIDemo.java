@@ -2,6 +2,7 @@ package com.cg.streamapi;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class StreamAPIDemo {
 
@@ -22,11 +23,6 @@ public class StreamAPIDemo {
 		List<String> area = getPlaces();
 		
 		System.out.println("Places from India");
-		area
-		.stream()
-		.filter((p) -> p.startsWith("India"))
-		.map((p) -> p.toUpperCase())
-		.sorted()
-		.forEach((p) -> System.out.println(p));
+		area.stream().filter((p) -> p.startsWith("India")).map((p) -> p.toUpperCase()).sorted().forEach((p) -> System.out.println(p));
 	}
 }
