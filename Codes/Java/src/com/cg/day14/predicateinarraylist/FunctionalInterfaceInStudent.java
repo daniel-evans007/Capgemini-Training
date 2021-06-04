@@ -23,7 +23,7 @@ public class FunctionalInterfaceInStudent {
 		List<String> studentNameInitials = convertStudentNameListToNamesList(studentList,
 				funcStdToString.andThen(subStr));
 		
-		System.out.println("Student Name Initials...");
+		System.out.println("Student Initials...");
 		
 		studentNameInitials.forEach(str -> {System.out.println(str);});
 	}
