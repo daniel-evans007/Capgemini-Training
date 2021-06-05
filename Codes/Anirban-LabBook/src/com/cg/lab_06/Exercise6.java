@@ -13,15 +13,15 @@ public class Exercise6 {
 
 	public static List<String> eligibilityList(Map<String, String> votersMap) {
 		
-		LocalDate now = LocalDate.now();
 		Period age;
+		LocalDate voterDOB;
 		
 		List<String> voterList = new ArrayList<String>();
 		
 		for (Map.Entry<String, String> voter : votersMap.entrySet()) {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-			LocalDate voterDOB = LocalDate.parse(voter.getValue(), formatter);
-			age = Period.between(voterDOB, now);
+			voterDOB = LocalDate.parse(voter.getValue(), formatter);
+			age = Period.between(voterDOB, LocalDate.now());
 			
 			if (age.getYears() > 18) {
 				voterList.add(voter.getKey());
