@@ -28,9 +28,6 @@ public class EmployeeInsuranceSystem implements EmployeeService {
 			throw new EmployeeException("Salary cannot be so low.");
 		}
 		
-		System.out.print("Enter Designation: ");
-		emp.setDesignation(sc.nextLine());
-		
 		empMap.put(emp.getId(), emp);
 	}
 	
@@ -38,17 +35,21 @@ public class EmployeeInsuranceSystem implements EmployeeService {
 		
 		emp.setInsuranceScheme("No Scheme");
 		
-		if (emp.getSalary() < 5000 && emp.getDesignation().equalsIgnoreCase("Clerk")) {
+		if (emp.getSalary() < 5000) {
 			emp.setInsuranceScheme("No Scheme");
+			emp.setDesignation("Clerk");
 		}
-		else if (emp.getSalary() > 5000 && emp.getSalary() < 20000 && emp.getDesignation().equalsIgnoreCase("System Associate")) {
+		else if (emp.getSalary() > 5000 && emp.getSalary() < 20000) {
 			emp.setInsuranceScheme("Scheme C");
+			emp.setDesignation("System Associate");
 		}
-		else if (emp.getSalary() >= 20000 && emp.getSalary() < 40000 && emp.getDesignation().equalsIgnoreCase("Programmer")) {
+		else if (emp.getSalary() >= 20000 && emp.getSalary() < 40000) {
 			emp.setInsuranceScheme("Scheme B");
+			emp.setDesignation("Programmer");
 		}
-		else if (emp.getSalary() >= 40000 && emp.getDesignation().equalsIgnoreCase("Manager")) {
+		else if (emp.getSalary() >= 40000) {
 			emp.setInsuranceScheme("Scheme A");
+			emp.setDesignation("Manager");
 		}
 	}
 	

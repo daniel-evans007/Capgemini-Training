@@ -16,9 +16,10 @@ public class EmployeeDriverCode {
 		String choice = "yes";
 		
 		while (choice.equalsIgnoreCase("yes")) {
-			System.out.println("Enter 1 to add an Employee and auto-apply an Insurance scheme: ");
+			System.out.println("Enter 1 to add an Employee and auto-apply Designation and Insurance scheme: ");
 			System.out.println("Enter 2 to delete an Employee: ");
 			System.out.println("Enter 3 to display all the Employees: ");
+			
 			System.out.print("\nEnter your choice: ");
 			int option = Integer.parseInt(sc.nextLine());
 			
