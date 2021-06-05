@@ -67,5 +67,6 @@ public class Employee {
 		System.out.print("\nEmployee Salary: "+salary);
 		System.out.print("\nEmployee Designation: "+designation);
 		System.out.print("\nEmployee Insurance Scheme: "+insuranceScheme);
+		System.out.println();
 	}
 }

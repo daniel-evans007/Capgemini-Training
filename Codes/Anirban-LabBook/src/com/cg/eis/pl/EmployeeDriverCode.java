@@ -37,13 +37,14 @@ public class EmployeeDriverCode {
 				System.out.println("Invalid choice...");
 			}
 			
-			System.out.print("\nDo you want to continue, yes or no: ");
+			System.out.println("\nDo you want to continue, yes or no: ");
 			choice = sc.nextLine();
 			
 			if (!choice.equalsIgnoreCase("yes")) {
 				System.out.println("\nExiting Program successfully...");
 				System.exit(0);
 			}
+			
 			System.out.println();
 		}
 	}
