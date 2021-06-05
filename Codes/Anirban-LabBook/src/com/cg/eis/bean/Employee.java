@@ -60,4 +60,12 @@ public class Employee {
 	public void setInsuranceScheme(String insuranceScheme) {
 		this.insuranceScheme = insuranceScheme;
 	}
+	
+	public void print() {
+		System.out.print("\nEmployee ID: "+id);
+		System.out.print("\nEmployee Name: "+name);
+		System.out.print("\nEmployee Salary: "+salary);
+		System.out.print("\nEmployee Designation: "+designation);
+		System.out.print("\nEmployee Insurance Scheme: "+insuranceScheme);
+	}
 }

@@ -1,16 +1,19 @@
 package com.cg.eis.service;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 import com.cg.eis.bean.Employee;
+import com.cg.eis.exception.EmployeeException;
 
-public class EmployeeInsuranceSystem implements EmployeeService{
+public class EmployeeInsuranceSystem implements EmployeeService {
 
 	Employee emp = new Employee();
+	HashMap<String, Employee> empMap = new HashMap<String, Employee>();
+	static Scanner sc = new Scanner(System.in);
 	
-	public void getEmployeeDetails() {
-		
-		Scanner sc = new Scanner(System.in);
+	public void getEmployeeDetails() throws EmployeeException {
 		
 		System.out.print("Enter ID: ");
 		emp.setId(sc.nextLine());
@@ -21,10 +24,14 @@ public class EmployeeInsuranceSystem implements EmployeeService{
 		System.out.print("Enter Salary: ");
 		emp.setSalary(Double.parseDouble(sc.nextLine()));
 		
+		if (emp.getSalary() < 3000) {
+			throw new EmployeeException("Salary cannot be so low.");
+		}
+		
 		System.out.print("Enter Designation: ");
 		emp.setDesignation(sc.nextLine());
 		
-		sc.close();
+		empMap.put(emp.getId(), emp);
 	}
 	
 	public void getInsuranceScheme() {
@@ -45,12 +52,20 @@ public class EmployeeInsuranceSystem implements EmployeeService{
 		}
 	}
 	
-	public void displayEmployeeDetails() {
+	public void deleteEmployee() {
+		System.out.print("Enter the Employee ID: ");
+		String identity = sc.nextLine();
 		
-		System.out.print("\nEmployee ID: "+emp.getId());
-		System.out.print("\nEmployee Name: "+emp.getName());
-		System.out.print("\nEmployee Salary: "+emp.getSalary());
-		System.out.print("\nEmployee Designation: "+emp.getDesignation());
-		System.out.print("\nEmployee Insurance Scheme: "+emp.getInsuranceScheme());
+		for (Map.Entry<String, Employee> element : empMap.entrySet()) {
+			if (element.getKey().equals(identity)) {
+				empMap.remove(emp.getId());
+			}
+		}
+	}
+	
+	public void displayEmployeeDetails() {
+		for (Map.Entry<String, Employee> emp : empMap.entrySet()) {
+			emp.getValue().print();
+		}
 	}
 }
