@@ -1,5 +1,7 @@
 package com.cg.lab_09.exericse4;
 
+import java.util.Scanner;
+
 @FunctionalInterface
 interface Display {
 	void print();
@@ -9,21 +11,15 @@ public class Exercise4 {
 
 	private int id;
 	private String name;
-	private float marks1;
-	private float marks2;
-	private float marks3;
 	
 	public Exercise4() {
 		
 	}
 
-	public Exercise4(int id, String name, float marks1, float marks2, float marks3) {
+	public Exercise4(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.marks1 = marks1;
-		this.marks2 = marks2;
-		this.marks3 = marks3;
 	}
 
 	public int getId() {
@@ -42,43 +38,26 @@ public class Exercise4 {
 		this.name = name;
 	}
 
-	public float getMarks1() {
-		return marks1;
-	}
-
-	public void setMarks1(float marks1) {
-		this.marks1 = marks1;
-	}
-
-	public float getMarks2() {
-		return marks2;
-	}
-
-	public void setMarks2(float marks2) {
-		this.marks2 = marks2;
-	}
-
-	public float getMarks3() {
-		return marks3;
-	}
-
-	public void setMarks3(float marks3) {
-		this.marks3 = marks3;
-	}
-	
-	public float calculateTotal() {
-		return getMarks1()+getMarks2()+getMarks3();
-	}
-	
 	public void display() {
 		System.out.println("Details are: ");
 		System.out.println("ID: "+getId());
 		System.out.println("Name: "+getName().toUpperCase());
-		System.out.println("Total: "+calculateTotal());
 	}
 	
 	public static void main(String[] args) {
 		
-		Scanner sc = new 
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter the ID: ");
+		int id = Integer.parseInt(sc.nextLine());
+		System.out.println("Enter the Name: ");
+		String name = sc.nextLine();
+		
+		Exercise4 ex4 = new Exercise4(id, name);
+		Display display = ex4::display;
+		
+		System.out.println();
+		
+		sc.close();
 	}
 }
