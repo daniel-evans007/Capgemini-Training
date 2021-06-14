@@ -14,6 +14,7 @@ public class JDBCDemo {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		
 		//Establish the connection
+		System.out.println("Connecting to database...\n");
 		con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "oracle");
 		
 		//Create the statement
