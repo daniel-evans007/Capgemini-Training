@@ -3,10 +3,11 @@ package com.cg.hibernateonetoone.entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "danny_dbms.Instructor")
 public class Instructor {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String firstName;
 	private String lastName;
@@ -20,12 +21,11 @@ public class Instructor {
 		super();
 	}
 
-	public Instructor(String firstName, String lastName, String email, InstructorDetail instructorDetail) {
+	public Instructor(String firstName, String lastName, String email) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.instructorDetail = instructorDetail;
 	}
 
 	public Integer getId() {
