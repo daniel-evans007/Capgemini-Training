@@ -3,23 +3,40 @@ package com.cg.hibernateonetoone;
 import java.util.Scanner;
 
 import com.cg.hibernateonetoone.dao.InstructorDao;
+import com.cg.hibernateonetoone.entity.Course;
 import com.cg.hibernateonetoone.entity.Instructor;
 import com.cg.hibernateonetoone.entity.InstructorDetail;
+import com.cg.hibernateonetoone.entity.Project;
 
 public class App {
     public static void main( String[] args ) {
-        
-    	Instructor instructor = new Instructor("Anirban", "Goswami", "anirban@gmail.com");
-    	InstructorDetail instructorDetail = new InstructorDetail("youtube.com/danny", "Tech");
-    	instructor.setInstructorDetail(instructorDetail);
-    	InstructorDao instructorDao = new InstructorDao();
-    	instructorDao.saveInstructor(instructor);
     	
     	Scanner sc = new Scanner(System.in);
+        
+    	Instructor instructor = new Instructor("Kenny", "Evans", "kenny@gmail.com");
+    	InstructorDetail instructorDetail = new InstructorDetail("yt.com/kenny", "guitar");
+    	InstructorDao instructorDao = new InstructorDao();
+
+		instructor.setInstructorDetail(instructorDetail);
+
+    	
+    	//creating some courses
+    	Course cs1 = new Course("Java");
+    	instructor.getCourses().add(cs1);
+    	
+    	//creating some projects
+    	Project p1 = new Project("HR Management System");
+    	
+    	instructor.getProjects().add(p1);
+    	
+    	//adding instructors to project
+    	p1.getInstructors().add(instructor);
+    	
+		instructorDao.saveInstructor(instructor);
     	
     	String choice = "yes";
     	
-    	while (choice.equalsIgnoreCase("yes")) {
+    	/*while (choice.equalsIgnoreCase("yes")) {
     		System.out.println();
     		System.out.println("insert: insert data");
     		System.out.println("update: update data");
@@ -83,7 +100,7 @@ public class App {
     			System.out.println("Exiting program successfully");
     			System.exit(0);
     		}
-    	}
+    	}*/
     	sc.close();
     }
 }

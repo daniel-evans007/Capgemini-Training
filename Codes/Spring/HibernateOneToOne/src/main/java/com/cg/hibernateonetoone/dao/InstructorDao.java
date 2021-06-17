@@ -58,6 +58,7 @@ public class InstructorDao {
 			//get instructor using id
 			instructor = session.get(Instructor.class, id);
 			//save the Instructor object
+			
 			session.delete(instructor);
 			//commit the transaction
 			transaction.commit();

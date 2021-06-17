@@ -3,7 +3,6 @@ package com.cg.hibernateonetoone.dao;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.cg.hibernateonetoone.entity.Instructor;
 import com.cg.hibernateonetoone.entity.InstructorDetail;
 import com.cg.hibernateonetoone.util.HibernateUtil;
 

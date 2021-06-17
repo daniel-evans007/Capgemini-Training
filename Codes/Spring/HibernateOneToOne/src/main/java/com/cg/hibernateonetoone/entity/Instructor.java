@@ -1,5 +1,10 @@
 package com.cg.hibernateonetoone.entity;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,6 +13,7 @@ public class Instructor {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Integer id;
 	private String firstName;
 	private String lastName;
@@ -16,6 +22,16 @@ public class Instructor {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "instructor_detail_id")
 	private InstructorDetail instructorDetail;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "courseid")
+	private List<Course> courses = new ArrayList<Course>();
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "instructor_detail_id", joinColumns = {
+			@JoinColumn(name = "instructorid")},
+	inverseJoinColumns = {@JoinColumn(name = "projectid")})
+	private Set<Project> projects = new HashSet<Project>();
 
 	public Instructor() {
 		super();
@@ -26,6 +42,22 @@ public class Instructor {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+	}
+
+	public Set<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(Set<Project> projects) {
+		this.projects = projects;
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 	public Integer getId() {

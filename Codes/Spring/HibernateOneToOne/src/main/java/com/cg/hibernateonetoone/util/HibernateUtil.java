@@ -8,8 +8,10 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
+import com.cg.hibernateonetoone.entity.Course;
 import com.cg.hibernateonetoone.entity.Instructor;
 import com.cg.hibernateonetoone.entity.InstructorDetail;
+import com.cg.hibernateonetoone.entity.Project;
 
 
 /*
@@ -48,7 +50,7 @@ public class HibernateUtil {
 			dbsettings.put(Environment.URL, "jdbc:oracle:thin:@localhost:1521:xe");
 			dbsettings.put(Environment.USER, "system");
 			dbsettings.put(Environment.PASS, "oracle");
-			dbsettings.put(Environment.DIALECT, "org.hibernate.dialect.OracleDialect");
+			dbsettings.put(Environment.DIALECT, "org.hibernate.dialect.Oracle10gDialect");
 			dbsettings.put(Environment.SHOW_SQL, "true");
 			dbsettings.put(Environment.HBM2DDL_AUTO, "create-drop");
 			dbsettings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
@@ -56,6 +58,8 @@ public class HibernateUtil {
 			cfg.setProperties(dbsettings);
 			cfg.addAnnotatedClass(Instructor.class);
 			cfg.addAnnotatedClass(InstructorDetail.class);
+			cfg.addAnnotatedClass(Course.class);
+			cfg.addAnnotatedClass(Project.class);
 			
 			/*
 			 * this contains contracts that make up the hibernate
