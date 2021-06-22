@@ -12,26 +12,19 @@ import com.cg.springbootdemo.model.Employee;
 @RequestMapping("/employee")
 public class EmployeeController {
 	
-	static ArrayList<Employee> empList = new ArrayList<Employee>();
-	static Employee emp1 = new Employee(100, "Daniel");
-	static Employee emp2 = new Employee(101, "Anirban");
-	static Employee e = new Employee();
-
-	@RequestMapping("/showemployee")
-	public ArrayList<Employee> showEmp() {
-		empList.add(emp1);
-		empList.add(emp2);
-		return empList;
-	}
-	
 	@RequestMapping("/showempbyid/{id}")
 	public Employee showEmpById(@PathVariable("id") int id) {
+		ArrayList<Employee> empList = new ArrayList<Employee>();
+		Employee emp1 = new Employee(100, "Daniel");
+		Employee emp2 = new Employee(101, "Anirban");
+		Employee e = new Employee();
 		
-		for (int i=0;i<empList.size();i++) {
-			if (empList.get(i).getEid() == id) {
-				e = empList.get(i);
-				System.out.println(e.getName());
-				return e;
+		empList.add(emp1);
+		empList.add(emp2);
+		
+		for (Employee emp : empList) {
+			if (emp.getEid() == id) {
+				e = emp;
 			}
 		}
 		return e;
