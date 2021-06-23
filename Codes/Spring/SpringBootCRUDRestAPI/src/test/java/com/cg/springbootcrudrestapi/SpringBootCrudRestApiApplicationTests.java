@@ -1,10 +1,10 @@
-package com.cg.springbootprojectstructuredemo;
+package com.cg.springbootcrudrestapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootProjectStructureDemoApplicationTests {
+class SpringBootCrudRestApiApplicationTests {
 
 	@Test
 	void contextLoads() {
