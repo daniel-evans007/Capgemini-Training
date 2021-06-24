@@ -14,13 +14,11 @@ public class CustomerRepository implements ICustomerRepository{
 
 	@Override
 	public List<Customer> getCustomers() {
-		// TODO Auto-generated method stub
 		return customerList;
 	}
 
 	@Override
 	public Customer getCustomer(int id) {
-		// TODO Auto-generated method stub
 		Customer result = null ;
 		for(Customer customer :customerList) {
 			if(customer.getCustId() == id) {
@@ -32,21 +30,18 @@ public class CustomerRepository implements ICustomerRepository{
 
 	@Override
 	public Customer addCustomer(Customer customer) {
-		// TODO Auto-generated method stub
 		customerList.add(customer);
 		return customer;
 	}
 
 	@Override
 	public Customer updateCustomer(Customer customer) {
-		// TODO Auto-generated method stub
 		customerList.add(customer);
 		return customer;
 	}
 
 	@Override
 	public Customer deleteCustomer(int id) {
-		// TODO Auto-generated method stub
 		int index = 0 ;
 		Customer result = null ;
 		for(int i=0;i<customerList.size();i++) {

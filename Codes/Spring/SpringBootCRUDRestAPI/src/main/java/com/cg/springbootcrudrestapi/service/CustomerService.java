@@ -16,31 +16,26 @@ public class CustomerService implements ICustomerService{
 
 	@Override
 	public List<Customer> getCustomers() {
-		// TODO Auto-generated method stub
 		return customerRepository.getCustomers();
 	}
 
 	@Override
 	public Customer getCustomer(int id) {
-		// TODO Auto-generated method stub
 		return customerRepository.getCustomer(id);
 	}
 
 	@Override
 	public Customer addCustomer(Customer customer) {
-		// TODO Auto-generated method stub
 		return customerRepository.addCustomer(customer);
 	}
 
 	@Override
 	public Customer deleteCustomer(int id) {
-		// TODO Auto-generated method stub
 		return customerRepository.deleteCustomer(id);
 	}
 
 	@Override
 	public Customer updateCustomer(Customer customer) {
-		// TODO Auto-generated method stub
 		return customerRepository.updateCustomer(customer);
 	}
 }

@@ -5,13 +5,13 @@ public class Customer {
 	private int custId;
 	private String custName;
 	private String custEmail;
-	private int custMobileNo;
+	private String custMobileNo;
 	
 	public Customer() {
 		super();
 	}
 	
-	public Customer(int custId, String custName, String custEmail, int custMobileNo) {
+	public Customer(int custId, String custName, String custEmail, String custMobileNo) {
 		super();
 		this.custId = custId;
 		this.custName = custName;
@@ -43,11 +43,11 @@ public class Customer {
 		this.custEmail = custEmail;
 	}
 	
-	public int getCustMobileNo() {
+	public String getCustMobileNo() {
 		return custMobileNo;
 	}
 	
-	public void setCustMobileNo(int custMobileNo) {
+	public void setCustMobileNo(String custMobileNo) {
 		this.custMobileNo = custMobileNo;
 	}
 	
