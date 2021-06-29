@@ -1,58 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        li {
-            float: right;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
+<html>
+    <title>Restaurant</title>
+    <body>
+        <style>
+            div.background {
+                background: url('image.jpg');
+                background-size: cover;
             }
-
-        li a:hover {
-            background-color: #111;
-        }
-
-        h2{
-           border: 5px;
-           border-style: solid;
-           border-color: rgb(196, 24, 24);
-           margin-top: 200px;
-           width: 500px;
-           padding: 10px;
-        }
-    </style>
-</head>
-<ul>
-    <li style="float :left; font-size: x-large;  display: block; color: white; text-align: center; padding: 14px 16px;">Company Logo</li>
-    <li><a href="#about" >About Us</a></li>
-    <li><a href="#contact">Contact Us</a></li>
-    <li><a class="active" href="#home">Home</a></li>
-  </ul>
- <center>
-    <div>
-        <h2><b>WELCOME TO ABC ELECTRONICS</b></h2>
-        <i>All your electronics in one place</i><br><br>
-        <button>View more</button>
-    </div>
-    </center>
+        
+            span {
+                background-color: yellow;
+                font-size: x-large;
+                text-align: center;
+            }
+        
+            div.box {
+                background-color: black;
+                opacity: 0.7;
+                height: 800px;
+                width: 600px;
+            }
+            div.content{
+                color: white;
+                font-weight: bolder;
+                text-align: center;
+                padding: 50px;
+                font-size: x-large;
+            }
+            button{
+                background-color: orange;
+                font-size: x-large;
+            }
+        </style>
+        
+        <div class="background">
+            <span style="margin-left: 650px;">Home</span>
+            <span style="margin-left: 50px;">Menu</span>
+            <span style="margin-left: 50px;">FAQ</span>
+            <span style="margin-left: 50px;">Contact</span>
+            <div class="box">
+                <div class="content">
+                    <p>
+                    <h1>WELCOME TO MA DURGA RESTAURANT</h1>
+                    </p><br><br>
+                    <p><em>Order delicious food online, 100% quality, safety and taste assured.</em></p><br><br>
+                    <p>
+                    <h2>CALL 9650549987 FOR RESERVATIONS</h2>
+                    </p><br><br>
+                    <button>ORDER NOW</button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
