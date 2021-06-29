@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <title>FCC: Survey Form</title>
+    <head>FCC: Survey Form</head>
+    <body>
+        <div style="font-size: larger; color: gray;">
+            <p>Would you recommend freeCodeCamp to a friend?</p>
+            <input type="radio" id="Definitely" name="recommend" value="Definitely">
+            <label for = "Definitely">Definitely</label><br><br>
+            <input type="radio" id="Maybe" name="recommend" value="Maybe">
+            <label for = "Maybe">Maybe</label><br><br>
+            <input type="radio" id="Not sure" name="recommend" value="Not sure">
+            <label for = "Not sure">Not sure</label>
+        </div>
+
+        <div style="font-size: larger; color: gray;">
+            <p>What is your favorite feature of freeCodeCamp?</p>
+            <label for="option"></label>
+            <select id="option" name="option">
+                <option value="Easy to Use">Easy to Use</option>
+                <option value="Free">Free</option>
+                <option value="Interactive">Interactive</option>
+                <option value="Top Class Teaching">Top Class Teaching</option>
+            </select>
+        </div>
+
+        <div style="font-size: larger; color: gray;">
+            <p style="font-size: larger; color: gray;">What would you like to see improved?</p>
+            <input type="checkbox" id="Front-end Projects" name="recommend" value="Front-end Projects">
+            <label for = "Front-end Projects">Front-end Projects</label><br><br>
+
+            <input type="checkbox" id="Back-end Projects" name="recommend" value="Back-end Projects">
+            <label for = "Back-end Projects">Back-end Projects</label><br><br>
+
+            <input type="checkbox" id="Data Visualization" name="recommend" value="Data Visualization">
+            <label for = "Data Visualization">Data Visualization</label><br><br>
+
+            <input type="checkbox" id="Challenges" name="recommend" value="Challenges">
+            <label for = "Challenges">Challenges</label><br><br>
+
+            <input type="checkbox" id="Open Source Community" name="recommend" value="Open Source Community">
+            <label for = "Open Source Community">Open Source Community</label><br><br>
+
+            <input type="checkbox" id="Gitter help rooms" name="recommend" value="Gitter help rooms">
+            <label for = "Gitter help rooms">Gitter help rooms</label><br><br>
+        </div>
+
+        <div style="font-size: larger; color: gray;">
+            <p>Any comments or suggestions?</p>
+            <form>
+                <label for="text"></label>
+                <textarea id="text" name="text" rows="4" cols="50">Enter your comment here...</textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
