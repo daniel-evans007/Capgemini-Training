@@ -10,8 +10,8 @@ import com.cg.mts.entities.TripBooking;
 @Service
 public interface ITripBookingService {
 	public TripBooking insertTripBooking(TripBooking tripBooking);
-	public TripBooking updateTripBooking(TripBooking tripBooking,int id);
-	public ResponseEntity<TripBooking> deleteTripBooking(int customerId);
-	public List<TripBooking> viewAllTripsCustomer(int customerId);
+	public TripBooking updateTripBooking(TripBooking tripBooking,long id);
+	public ResponseEntity<TripBooking> deleteTripBooking(long customerId);
+	public List<TripBooking> viewAllTripsCustomer(long customerId);
 	public String calculateBill(long customerId);
 }

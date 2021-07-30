@@ -19,18 +19,13 @@ public class TripBookingService implements ITripBookingService{
 	@Autowired
 	private ITripBookingRepository iTripBookingRepository;
 	
-	@Autowired
-	private ICustomerRepository iCustomerRepository;
-	
 	@Override
 	public TripBooking insertTripBooking(TripBooking tripBooking) {
-		// TODO Auto-generated method stub
 		return this.iTripBookingRepository.save(tripBooking);
 	}
 
 	@Override
-	public TripBooking updateTripBooking(TripBooking tripBooking,int id) {
-		// TODO Auto-generated method stub
+	public TripBooking updateTripBooking(TripBooking tripBooking, long id) {
 		TripBooking trip =  iTripBookingRepository.findById(id).orElseThrow(()-> new CustomerNotFoundException("Trip not found"));
 		trip.setDriver(tripBooking.getDriver());
 		trip.setDistanceInKm(tripBooking.getDistanceInKm());
@@ -44,16 +39,14 @@ public class TripBookingService implements ITripBookingService{
 	}
 
 	@Override
-	public ResponseEntity<TripBooking> deleteTripBooking(int customerId) {
-		// TODO Auto-generated method stub
+	public ResponseEntity<TripBooking> deleteTripBooking(long customerId) {
 		TripBooking trip = iTripBookingRepository.findById(customerId).orElseThrow(()-> new CustomerNotFoundException("Trip not found"));
 		iTripBookingRepository.delete(trip);
 		return ResponseEntity.ok().build();
 	}
 
 	@Override
-	public List<TripBooking> viewAllTripsCustomer(int customerId) {
-		// TODO Auto-generated method stub
+	public List<TripBooking> viewAllTripsCustomer(long customerId) {
 		List<TripBooking> findAllTrips = iTripBookingRepository.findAll();
 		List<TripBooking> tripList = new ArrayList<TripBooking>();
 		for(int i=0; i<findAllTrips.size(); i++) {
@@ -66,8 +59,6 @@ public class TripBookingService implements ITripBookingService{
 
 	@Override
 	public String calculateBill(long customerId) {
-		// TODO Auto-generated method stub
-		Customer cust = iCustomerRepository.findById(customerId).orElseThrow(()-> new CustomerNotFoundException("Customer not found."));
 		List<TripBooking> findAllTrip = iTripBookingRepository.findAll();
 		List<TripBooking> tripList = new ArrayList<TripBooking>();
 		for(int i=0; i<findAllTrip.size(); i++) {

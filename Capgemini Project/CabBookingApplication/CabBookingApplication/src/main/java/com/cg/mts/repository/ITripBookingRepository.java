@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.cg.mts.entities.TripBooking;
 
 @Repository
-public interface ITripBookingRepository extends JpaRepository<TripBooking, Integer> {
+public interface ITripBookingRepository extends JpaRepository<TripBooking, Long> {
 
 }
