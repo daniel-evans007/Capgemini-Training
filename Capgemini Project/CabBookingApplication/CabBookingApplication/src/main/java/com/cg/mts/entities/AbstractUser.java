@@ -1,26 +1,15 @@
 package com.cg.mts.entities;
 
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
 
-//
-//@Entity
-//@Inheritance
 @MappedSuperclass
-//@Table(name="abstract_user")
 public abstract class AbstractUser{
 	
 	@Id
@@ -56,7 +45,6 @@ public abstract class AbstractUser{
 		return username;
 	}
 
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -86,14 +74,11 @@ public abstract class AbstractUser{
 	}
 
 
-
 	public long getId() {
 		return Id;
 	}
 
-
-
 	public void setId(long joinId) {
-		this.Id = Id;
+		this.Id = joinId;
 	}
 }

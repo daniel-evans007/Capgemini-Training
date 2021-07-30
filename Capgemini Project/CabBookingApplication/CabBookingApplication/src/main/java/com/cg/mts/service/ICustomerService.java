@@ -11,6 +11,5 @@ public interface ICustomerService {
 	public Customer updateCustomer(Customer customer, long id);
 	public ResponseEntity<Customer> deleteCustomer(long id);
 	public List<Customer>viewCustomers();
-	public Customer viewCustomer(int customerId);
-	public Customer validateCustomer(String username, String password);
+	public Customer viewCustomer(long customerId);
 }

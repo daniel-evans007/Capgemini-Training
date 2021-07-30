@@ -1,6 +1,5 @@
 package com.cg.mts.service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -14,9 +13,9 @@ public interface IAdminService {
 	public Admin insertAdmin(Admin admin);
 	public Admin updateAdmin(Admin admin, long id);
 	public ResponseEntity<Admin> deleteAdmin(long adminId);
-	public List<TripBooking>getAllTrips(int customerId);
-	public List<TripBooking>getTripsCabwise();
-	public List<TripBooking>getTripsCustomerwise();
-	public List<TripBooking>getTripsDatewise();
-	public List<TripBooking>getAllTripsForDays(int customerId, LocalDateTime fromDate, LocalDateTime toDate);
+	public List<TripBooking>getAllTrips();
+	public List<TripBooking>getTripsCabwise(long cabId);
+	public List<TripBooking>getTripsCustomerwise(long customerId);
+	public List<TripBooking>getTripsDatewise(String date);
+	public List<TripBooking>getAllTripsForDays(long customerId, String fromDate, String toDate);
 }

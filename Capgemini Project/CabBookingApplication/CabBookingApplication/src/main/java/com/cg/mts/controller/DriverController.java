@@ -1,8 +1,11 @@
 package com.cg.mts.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,5 +39,17 @@ public class DriverController {
 	public ResponseEntity<Driver> deleteDriver(@PathVariable("id")long id) {
 		// TODO Auto-generated method stub
 		return driverService.deleteDriver(id);
+	}
+	
+	@GetMapping("/viewdriver/{id}")
+	public Driver viewDriver(@PathVariable("id") long id) {
+		// TODO Auto-generated method stub
+		return driverService.viewDriver(id);
+	}
+	
+	@GetMapping("/viewbestdriver")
+	public List<Driver> viewBestDrivers() {
+		// TODO Auto-generated method stub
+		return driverService.viewBestDrivers();
 	}
 }

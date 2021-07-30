@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Customer extends AbstractUser{
 	
 //	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "customer_Sequence")
-//    @SequenceGenerator(name = "customer_Sequence", sequenceName = "CUSTOMER_SEQ", initialValue = 201)
+//  @SequenceGenerator(name = "customer_Sequence", sequenceName = "CUSTOMER_SEQ", initialValue = 201)
 	//private int customerId;
 
 	@OneToOne(cascade =  CascadeType.ALL)

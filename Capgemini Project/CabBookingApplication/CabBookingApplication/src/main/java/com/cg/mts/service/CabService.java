@@ -1,5 +1,6 @@
 package com.cg.mts.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class CabService implements ICabService{
 	}
 
 	@Override
-	public Cab updateCab(Cab cab, int id) {
+	public Cab updateCab(Cab cab, long id) {
 		// TODO Auto-generated method stub
 		Cab cb = null;
 		cb = iCabRepository.findById(id).orElseThrow(()->new CabNotFoundException("Cab not found."));
@@ -33,7 +34,7 @@ public class CabService implements ICabService{
 	}
 
 	@Override
-	public ResponseEntity<Cab> deleteCab(Cab cab, int id) {
+	public ResponseEntity<Cab> deleteCab(long id) {
 		// TODO Auto-generated method stub
 		Cab cb = iCabRepository.findById(id).orElseThrow(()-> new CabNotFoundException("Cab not found."));
 		iCabRepository.delete(cb);
@@ -43,13 +44,27 @@ public class CabService implements ICabService{
 	@Override
 	public List<Cab> viewCabsOfType(String carType) {
 		// TODO Auto-generated method stub
-		return null;
+		List<Cab> findAllCabs = iCabRepository.findAll();
+		List<Cab> cabList = new ArrayList<Cab>();
+		for(int i=0; i<findAllCabs.size() ;i++) {
+			if(findAllCabs.get(i).getCarType().toString().equals(carType)) {
+				cabList.add(findAllCabs.get(i));
+			}
+		}
+		return cabList;
 	}
 
 	@Override
 	public int countCabsOfType(String carType) {
 		// TODO Auto-generated method stub
-		return 0;
+		List<Cab> findAllCabs = iCabRepository.findAll();
+		int count = 0;
+		for(int i=0; i<findAllCabs.size() ;i++) {
+			if(findAllCabs.get(i).getCarType().toString().equals(carType)) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 }

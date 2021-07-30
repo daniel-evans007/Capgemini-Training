@@ -13,5 +13,5 @@ public interface IDriverService {
 	public Driver updateDriver(Driver driver,long id);
 	public ResponseEntity<Driver> deleteDriver(long driverId);
 	public List<Driver>viewBestDrivers();
-	public Driver viewDriver(int driverId);
+	public Driver viewDriver(long driverId);
 }

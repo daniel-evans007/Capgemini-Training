@@ -1,6 +1,7 @@
 package com.cg.mts.entities;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -21,10 +22,12 @@ public class TripBooking {
     @SequenceGenerator(name = "trip_Sequence", sequenceName = "TRIP_SEQ",initialValue = 101)
 	private int tripBookingId;
 	
-	private int customerId;
+	private long customerId;
+	
 	@OneToOne(cascade =  CascadeType.ALL)
 	@JoinColumn(name="Id")
 	private Driver driver;
+	
 	private String fromLocation;
 	private String toLocation;
 	private LocalDateTime fromDateTime;
@@ -33,13 +36,15 @@ public class TripBooking {
 	private float distanceInKm;
 	private float bill;
 	
+	//DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  int customerId, Driver driver,
+	
 	public TripBooking() {
 		super();
 	}
 
-	public TripBooking(int tripBookingId, int customerId,Driver driver, String fromLocation, String toLocation,
+	public TripBooking(int tripBookingId, long customerId, Driver driver,String fromLocation, String toLocation,
 			LocalDateTime fromDateTime, LocalDateTime toDateTime, boolean status, float distanceInKm, float bill) {
-		super();
+		super();   
 		this.tripBookingId = tripBookingId;
 		this.customerId = customerId;
 		this.driver = driver; 
@@ -60,11 +65,11 @@ public class TripBooking {
 		this.tripBookingId = tripBookingId;
 	}
 
-	public int getCustomerId() {
+	public long getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(int customerId) {
+	public void setCustomerId(long customerId) {
 		this.customerId = customerId;
 	}
 

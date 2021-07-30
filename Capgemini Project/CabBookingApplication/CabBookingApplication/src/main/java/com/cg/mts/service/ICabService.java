@@ -9,8 +9,8 @@ import com.cg.mts.entities.Cab;
 @Service
 public interface ICabService {
 	public Cab insertCab(Cab cab);
-	public Cab updateCab(Cab cab, int id);
-	public ResponseEntity<Cab> deleteCab(Cab cab, int id);
+	public Cab updateCab(Cab cab, long id);
+	public ResponseEntity<Cab> deleteCab(long id);
 	public List<Cab> viewCabsOfType(String carType);
 	public int countCabsOfType(String carType);
 }

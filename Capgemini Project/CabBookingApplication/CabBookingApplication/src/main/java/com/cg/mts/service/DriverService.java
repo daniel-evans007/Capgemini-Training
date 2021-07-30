@@ -1,5 +1,6 @@
 package com.cg.mts.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,13 +49,21 @@ public class DriverService implements IDriverService{
 	@Override
 	public List<Driver> viewBestDrivers() {
 		// TODO Auto-generated method stub
-		return null;
+		List<Driver> findAllDriver = iDriverRepository.findAll();
+		List<Driver> driverList = new ArrayList<Driver>();
+		for(int i=0; i<findAllDriver.size(); i++) {
+			if(findAllDriver.get(i).getRating() >= 4.5) {
+				driverList.add(findAllDriver.get(i));
+			}
+		}
+		return driverList;
 	}
 
 	@Override
-	public Driver viewDriver(int driverId) {
+	public Driver viewDriver(long id) {
 		// TODO Auto-generated method stub
-		return null;
+		Driver dvr = iDriverRepository.findById(id).orElseThrow(()-> new DriverNotFoundException("Driver not found"));
+		return dvr;
 	}
 
 }

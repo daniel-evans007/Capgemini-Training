@@ -41,19 +41,21 @@ public class CustomerService implements ICustomerService {
 	@Override
 	public List<Customer> viewCustomers() {
 		// TODO Auto-generated method stub
-		return null;
+		List<Customer> customerList = customerRepository.findAll();
+		return customerList;
 	}
 
 	@Override
-	public Customer viewCustomer(int customerId) {
+	public Customer viewCustomer(long customerId) {
 		// TODO Auto-generated method stub
-		return null;
+		Customer customer = customerRepository.findById(customerId).orElseThrow(()-> new CustomerNotFoundException("Customer not found"));
+		return customer;
 	}
 
-	@Override
-	public Customer validateCustomer(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Customer validateCustomer(String username, String password) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 	
 }
