@@ -1,29 +1,29 @@
 package com.cg.mts.entities;
 
-
-import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.SequenceGenerator;
 
 
+
+//@Entity
+//@Inheritance(strategy = InheritanceType.JOINED)
 @MappedSuperclass
-public abstract class AbstractUser{
+public abstract class AbstractUser {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "abstractuser_Sequence")
-    @SequenceGenerator(name = "abstractuser_Sequence", sequenceName = "ABSTRACTUSER_SEQ")
-	private long Id;
-	
-	@Column(name="username")
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "order_Sequence")
+//    @SequenceGenerator(name = "order_Sequence", sequenceName = "ORDER_SEQ")
+//	private long Id;
+//	
 	private String username;
-	@Column(name="password")
 	private String password;
-	@Column(name="mobile_number")
 	private String mobileNumber;
-	@Column(name="email")
 	private String email;
 	
 	public AbstractUser() {
@@ -31,14 +31,15 @@ public abstract class AbstractUser{
 	}
 
 
-	public AbstractUser(long Id, String username, String password, String mobileNumber, String email) {
+	public AbstractUser( String username, String password, String mobileNumber, String email) {
 
-		this.Id = Id;
+//		this.Id = joinId;long joinId,
 		this.username = username;
 		this.password = password;
 		this.mobileNumber = mobileNumber;
 		this.email = email;
 	}
+
 
 
 	public String getUsername() {
@@ -74,11 +75,14 @@ public abstract class AbstractUser{
 	}
 
 
-	public long getId() {
-		return Id;
-	}
 
-	public void setId(long joinId) {
-		this.Id = joinId;
-	}
+//	public long getId() {
+//		return Id;
+//	}
+//
+//
+//
+//	public void setId(long joinId) {
+//		this.Id = joinId;
+//	}
 }

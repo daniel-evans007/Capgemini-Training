@@ -2,9 +2,6 @@ package com.cg.mts.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Positive;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -32,52 +29,34 @@ import io.swagger.annotations.ApiResponses;
 @Validated
 public class CustomerController {
 
-	/**
-	 * Customer Controller Class
-	 */
 	@Autowired
 	private ICustomerService customerService;
 	
-	/**
-	 * Inserting Customer Details
-	 * @param customer
-	 * @return
-	 */
+	@ApiOperation(value = "Customer Login")
+	@PostMapping("/login")
+	public String userLogin(@ApiParam(value = "Customer login", required = true) @RequestBody Customer customer) {
+		
+		return customerService.LoginUser(customer);
+	}
+	
 	@ApiOperation(value = "Insert a Customer")
 	@PostMapping("/insertcustomer")
-	public Customer insertCustomer(@ApiParam(value = "Storing Customers in the database", required = true) @RequestBody Customer customer) {
+	public String insertCustomer(@ApiParam(value = "Storing Customers in the database", required = true) @RequestBody Customer customer) {
 		return customerService.insertCustomer(customer);
 	}
 	
-	/**
-	 * Updating Customer Details
-	 * @param id
-	 * @param customer
-	 * @return
-	 */
 	@ApiOperation(value = "Update Customer Details")
 	@PutMapping("/updatecustomer/{id}")
-	public Customer updateCustomer(@ApiParam(value = "Customer ID to update Customer details", required = true) @PathVariable("id") long id,
-			@ApiParam(value = "Update Customer object", required = true) @Valid @RequestBody Customer customer) {
+	public Customer updateCustomer(@ApiParam(value = "Customer ID to update Customer details", required = true) @RequestBody Customer customer, @PathVariable("id") long id) {
 		return customerService.updateCustomer(customer, id);
 	}
 	
-	/**
-	 * Removing a Customer Object
-	 * @param id
-	 * @return
-	 */
 	@ApiOperation(value = "Remove a Customer from the Database")
 	@DeleteMapping("/deletecustomer/{id}")
-	public ResponseEntity<Customer> deleteCustomer(@ApiParam(value = "Customer ID from which Customer object will be removed from the Database", required = true)
-	@PathVariable("id") long id) {
+	public ResponseEntity<Customer> deleteCustomer(@ApiParam(value = "Customer ID from which Customer object will be removed from the Database", required = true) @PathVariable("id") long id) {
 		return customerService.deleteCustomer(id);
 	}
 	
-	/**
-	 * Viewing the list of all Customers
-	 * @return
-	 */
 	@ApiOperation(value = "View a list of all the customers", response = List.class)
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "Successfully retrieved the list"),
@@ -90,14 +69,10 @@ public class CustomerController {
 		return customerService.viewCustomers();
 	}
 	
-	/**
-	 * Viewing Customer Details Based on ID
-	 * @param customerId
-	 * @return
-	 */
 	@ApiOperation(value = "Get Customer By ID")
 	@GetMapping("/getcustomerbyid/{customerId}")
-	public Customer getCustomerById(@ApiParam(value = "Customer ID by which Customer details will be retrieved", required = true) @PathVariable("customerId") @Positive long customerId) {
+	public Customer getCustomerById(@ApiParam(value = "Customer ID by which Customer details will be retrieved", required = true) @PathVariable("customerId") long customerId) {
 		return customerService.viewCustomer(customerId);
 	}
+	
 }

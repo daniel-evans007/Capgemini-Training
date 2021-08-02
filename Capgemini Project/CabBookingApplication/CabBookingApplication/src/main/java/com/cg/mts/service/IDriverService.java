@@ -9,9 +9,10 @@ import com.cg.mts.entities.Driver;
 
 @Service
 public interface IDriverService {
-	public Driver insertDriver(Driver driver);
-	public Driver updateDriver(Driver driver,long id);
+	public String insertDriver(Driver driver);
+	public Driver updateDriver(Driver driver,long driverId);
 	public ResponseEntity<Driver> deleteDriver(long driverId);
 	public List<Driver>viewBestDrivers();
 	public Driver viewDriver(long driverId);
+	public String LoginDriver(Driver driver);
 }

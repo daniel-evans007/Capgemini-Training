@@ -1,16 +1,12 @@
 package com.cg.mts.entities;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -18,14 +14,14 @@ import javax.persistence.Table;
 public class TripBooking {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "trip_Sequence")
-    @SequenceGenerator(name = "trip_Sequence", sequenceName = "TRIP_SEQ",initialValue = 101)
 	private int tripBookingId;
 	
-	private long customerId;
+	@OneToOne(cascade =  CascadeType.ALL)
+	@JoinColumn(name = "customerId")
+	private Customer customer;
 	
 	@OneToOne(cascade =  CascadeType.ALL)
-	@JoinColumn(name="Id")
+	@JoinColumn(name = "driverId")
 	private Driver driver;
 	
 	private String fromLocation;
@@ -36,18 +32,16 @@ public class TripBooking {
 	private float distanceInKm;
 	private float bill;
 	
-	//DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  int customerId, Driver driver,
-	
 	public TripBooking() {
 		super();
 	}
 
-	public TripBooking(int tripBookingId, long customerId, Driver driver,String fromLocation, String toLocation,
+	public TripBooking(int tripBookingId, Customer customer, Driver driver, String fromLocation, String toLocation,
 			LocalDateTime fromDateTime, LocalDateTime toDateTime, boolean status, float distanceInKm, float bill) {
-		super();   
+		super();
 		this.tripBookingId = tripBookingId;
-		this.customerId = customerId;
-		this.driver = driver; 
+		this.customer = customer;
+		this.driver = driver;
 		this.fromLocation = fromLocation;
 		this.toLocation = toLocation;
 		this.fromDateTime = fromDateTime;
@@ -65,12 +59,12 @@ public class TripBooking {
 		this.tripBookingId = tripBookingId;
 	}
 
-	public long getCustomerId() {
-		return customerId;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setCustomerId(long customerId) {
-		this.customerId = customerId;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	public Driver getDriver() {

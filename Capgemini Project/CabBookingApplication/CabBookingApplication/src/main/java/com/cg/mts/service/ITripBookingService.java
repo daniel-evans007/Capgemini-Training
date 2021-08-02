@@ -6,12 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.cg.mts.entities.TripBooking;
-
 @Service
 public interface ITripBookingService {
 	public TripBooking insertTripBooking(TripBooking tripBooking);
-	public TripBooking updateTripBooking(TripBooking tripBooking,long id);
-	public ResponseEntity<TripBooking> deleteTripBooking(long customerId);
+	public TripBooking updateTripBooking(TripBooking tripBooking,int id);
+	public ResponseEntity<TripBooking> deleteTripBooking(int id);
 	public List<TripBooking> viewAllTripsCustomer(long customerId);
 	public String calculateBill(long customerId);
 }

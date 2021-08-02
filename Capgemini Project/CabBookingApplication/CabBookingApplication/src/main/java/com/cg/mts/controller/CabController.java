@@ -2,8 +2,6 @@ package com.cg.mts.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -32,33 +30,34 @@ public class CabController {
 	@Autowired
 	private ICabService iCabService;
 	
-	@ApiOperation(value = "Insert a Customer")
+	@ApiOperation(value = "Insert a cab details.")
 	@PostMapping("/insertcab")
 	public Cab insertCab(@ApiParam(value = "Storing Cabs in the database", required = true) @RequestBody Cab cab) {
 		return iCabService.insertCab(cab);
 	}
-	
+	@ApiOperation(value = "Update Cab Details")
 	@PutMapping("/updatecab/{id}")
-	public Cab updateCab(@ApiParam(value = "Update Cab Details", required = true) @Valid @RequestBody Cab cab,
-			@ApiParam(value = "Customer ID to update Customer details", required = true) @PathVariable("id") int id) {
+	public Cab updateCab(@ApiParam(value = "Update Cab Details", required = true) @RequestBody Cab cab, @PathVariable("id") int id) {
 		return iCabService.updateCab(cab, id);
 	}
 	
 	@ApiOperation(value = "Remove a Cab from the Database")
 	@DeleteMapping("/deletecab/{id}")
-	public ResponseEntity<Cab> deleteCab(@ApiParam(value = "Cab ID from which Cab object will be removed from the Database", required = true) @PathVariable("id") long id){
+	public ResponseEntity<Cab> deleteCab(@ApiParam(value = "Cab ID from which Cab object will be removed from the Database", required = true) @PathVariable("id") int id){
 		return iCabService.deleteCab(id);
 	}
 	
-	@ApiOperation(value = "Get Customers By ID")
+	@ApiOperation(value = "Get cab By cab type")
 	@GetMapping("/viewcabstype/{id}")
-	public List<Cab> viewCabsOfType(@ApiParam(value = "Cab ID by which Cab details will be retrieved", required = true) @PathVariable("id")String type) {
+	public List<Cab> viewCabsOfType(@ApiParam(value = "Cab details will be retrieved", required = true) @PathVariable("id")String type) {
+		// TODO Auto-generated method stub
 		return iCabService.viewCabsOfType(type);
 	}
 	
 	@ApiOperation(value = "Count Cabs By Type")
 	@GetMapping("/countcabs/{type}")
 	public int countCabsOfType(@ApiParam(value = "Cab Type by which Cabs will be counted", required = true) @PathVariable("type")String type) {
+		// TODO Auto-generated method stub
 		return iCabService.countCabsOfType(type);
 	}
 }
