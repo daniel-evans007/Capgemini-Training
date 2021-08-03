@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.cg.mts.entities.Driver;
 import com.cg.mts.exception.DriverNotFoundException;
+import com.cg.mts.exception.UserNotLoginException;
 import com.cg.mts.repository.IDriverRepository;
 
 @Service
@@ -34,7 +35,7 @@ public class DriverService implements IDriverService{
 		
 		if(check == 0) {
 			this.iDriverRepository.save(driver);
-			return stringdriver+"'s account is created.";
+			return driver.getUsername()+"'s account is created.";
 		}else {
 			return driver.getEmail()+" already exists.";
 		}
@@ -72,7 +73,7 @@ public class DriverService implements IDriverService{
 			dvr.setCab(driver.getCab());
 			return iDriverRepository.save(dvr);
 		}else {
-			throw new DriverNotFoundException("Not Logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -85,7 +86,7 @@ public class DriverService implements IDriverService{
 			this.iDriverRepository.delete(dvr1);
 			return ResponseEntity.ok().build();
 		}else {
-			throw new DriverNotFoundException("Not Logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -102,7 +103,7 @@ public class DriverService implements IDriverService{
 			}
 			return driverList;
 		}else {
-			throw new DriverNotFoundException("Not Logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -113,7 +114,7 @@ public class DriverService implements IDriverService{
 			Driver dvr = iDriverRepository.findById(id).orElseThrow(()-> new DriverNotFoundException("Driver not found"));
 			return dvr;
 		}else {
-			throw new DriverNotFoundException("Not Logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 

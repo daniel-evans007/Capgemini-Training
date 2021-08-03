@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.mts.entities.Admin;
 import com.cg.mts.entities.TripBooking;
+import com.cg.mts.exception.UserNotLoginException;
 import com.cg.mts.service.IAdminService;
 
 import io.swagger.annotations.Api;
@@ -46,7 +47,7 @@ public class AdminController {
 	
 	@ApiOperation(value = "Update Admin Details")
 	@PutMapping("/updateadmin/{id}")
-	public Admin updateAdmin(@ApiParam(value = "Update Admin object", required = true) @RequestBody Admin admin,@PathVariable("id") long id) {
+	public Admin updateAdmin(@ApiParam(value = "Update Admin object", required = true) @RequestBody Admin admin,@PathVariable("id") long id){
 		return adminService.updateAdmin(admin,id);
 	}
 	

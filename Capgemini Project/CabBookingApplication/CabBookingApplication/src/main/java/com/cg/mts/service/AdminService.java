@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.cg.mts.entities.Admin;
 import com.cg.mts.entities.TripBooking;
 import com.cg.mts.exception.AdminNotFoundException;
+import com.cg.mts.exception.UserNotLoginException;
 import com.cg.mts.repository.IAdminRepository;
 import com.cg.mts.repository.ITripBookingRepository;
 
@@ -66,8 +67,9 @@ public class AdminService implements IAdminService{
 		return result;
 	}
 
+	
 	@Override
-	public Admin updateAdmin(Admin admin, long id) {
+	public Admin updateAdmin(Admin admin, long id){
 		// TODO Auto-generated method stub
 		if(flag == 1) {
 			Admin ad = null;
@@ -78,7 +80,7 @@ public class AdminService implements IAdminService{
 			ad.setMobileNumber(admin.getMobileNumber());
 			return (Admin) this.adminRepository.save(ad);
 		}else {
-			throw new AdminNotFoundException("Admin is not logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -91,7 +93,7 @@ public class AdminService implements IAdminService{
 			this.adminRepository.delete(ad);
 			return ResponseEntity.ok().build();
 		}else {
-			throw new AdminNotFoundException("Admin is not logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -102,7 +104,7 @@ public class AdminService implements IAdminService{
 			List<TripBooking> tripList = iTripBookingRepository.findAll();
 			return tripList;
 		}else {
-			throw new AdminNotFoundException("Admin is not logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -119,7 +121,7 @@ public class AdminService implements IAdminService{
 			}
 			return tripList;
 		}else {
-			throw new AdminNotFoundException("Admin is not logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -136,7 +138,7 @@ public class AdminService implements IAdminService{
 			}
 			return tripList;
 		}else {
-			throw new AdminNotFoundException("Admin is not logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -155,7 +157,7 @@ public class AdminService implements IAdminService{
 			}
 			return tripList_1;
 		}else {
-			throw new AdminNotFoundException("Admin is not logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -174,7 +176,7 @@ public class AdminService implements IAdminService{
 			
 			return tripList;
 		}else {
-			throw new AdminNotFoundException("Admin is not logged in.");
+			throw new UserNotLoginException();
 		}
 		
 	}

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.cg.mts.entities.Customer;
 import com.cg.mts.exception.CustomerNotFoundException;
+import com.cg.mts.exception.UserNotLoginException;
 import com.cg.mts.repository.ICustomerRepository;
 
 @Service
@@ -64,7 +65,7 @@ public class CustomerService implements ICustomerService{
 			cust.setMobileNumber(customer.getMobileNumber());
 			return (Customer) this.customerRepository.save(cust);
 		}else {
-			throw new CustomerNotFoundException("User is not logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -75,7 +76,7 @@ public class CustomerService implements ICustomerService{
 			this.customerRepository.delete(cust);
 			return ResponseEntity.ok().build();
 		}else {
-			throw new CustomerNotFoundException("User is not logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -86,7 +87,7 @@ public class CustomerService implements ICustomerService{
 			List<Customer> customerList = customerRepository.findAll();
 			return customerList;
 		}else {
-			throw new CustomerNotFoundException("User is not logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 
@@ -97,7 +98,7 @@ public class CustomerService implements ICustomerService{
 			Customer customer = customerRepository.findById(customerId).orElseThrow(()-> new CustomerNotFoundException("Customer not found"));
 			return customer;
 		}else {
-			throw new CustomerNotFoundException("User is not logged in.");
+			throw new UserNotLoginException();
 		}
 	}
 

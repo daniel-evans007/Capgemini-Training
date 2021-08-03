@@ -51,6 +51,7 @@ public class TripBooking {
 		this.bill = bill;
 	}
 
+	
 	public int getTripBookingId() {
 		return tripBookingId;
 	}
@@ -130,4 +131,5 @@ public class TripBooking {
 	public void setBill(float bill) {
 		this.bill = bill;
 	}
+	
 }
